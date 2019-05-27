@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="paintbros - retro bitmap editor" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/keithtmccartney/laughing-fortnight/" />
+    <meta property="og:image" content="https://kenreilly.github.io/paintbros/images/preview.png" />
+
+    <title>paintbros - retro bitmap editor</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+
+    <script type="module" src="./build/paintbros.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>paintbros</h1>
+
+        <div class="commands">
+            <button name="load">load</button>
+            <button name="save">save</button>
+            <button name="new">new</button>
+            <button name="help">?</button>
+        </div>
+    </header>
+
+    <div class="display">
+        <div class="editor-container">
+            <div class="editor"></div>
+        </div>
+
+        <div class="sidebar">
+            <h2>palette</h2>
+
+            <div class="palette"></div>
+
+            <h2>swatch</h2>
+
+            <div class="swatch">
+                <div class="current-color"></div>
+
+                <div class="recent-colors"></div>
+            </div>
+
+            <h2>tools</h2>
+
+            <div class="tools">
+                <button name="Paint" class="selected">!</button>
+                <button name="Erase">x</button>
+                <button name="Line">I</button>
+                <button name="Ellipse">O</button>
+                <button name="Rect">[]</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>&copy;2019 Keith McCartney</div>
+
+        <div>
+            <a href="https://twitter.com/keithtmccartney">@keithtmccartney</a>
+        </div>
+    </footer>
+
+    <div class="modal-container hidden">
+        <div class="modal hidden" name="new_file">
+            <h2 class="modal-title">new image</h2>
+
+            <form>
+                <span>height:</span>
+
+                <input name="height" />
+
+                <span>width:</span>
+
+                <input name="width" />
+            </form>
+
+            <div class="buttons">
+                <button name="cancel">Cancel</button>
+                <button name="ok">OK</button>
+            </div>
+        </div>
+
+        <div class="modal hidden" name="save_file">
+            <h2 class="modal-title">save file</h2>
+
+            <form>
+                <span>name:</span>
+
+                <input name="name" />
+
+                <span>type:</span>
+
+                <select name="type">
+                        <option value="json">Paintbros JSON</option>
+                        <option value="bmp">BMP</option>
+                    </select>
+            </form>
+
+            <div class="buttons">
+                <button name="cancel">Cancel</button>
+                <button name="ok">Save</button>
+            </div>
+        </div>
+
+        <div class="modal hidden" name="load_file">
+            <h2 class="modal-title">load file</h2>
+
+            <form>
+                <input type="file" name="file" />
+            </form>
+
+            <div class="buttons">
+                <button name="cancel">Cancel</button>
+                <button name="ok">Load</button>
+            </div>
+        </div>
+
+        <div class="modal big hidden" name="help">
+            <h2 class="modal-title">about paintbros</h2>
+
+            <div>
+                <p>Welcome to paintbros, a retro bitmap graphics editor.</p>
+                <p>This is an early alpha version, so only a few basic features have been implemented so far, including drawing, erasing, and the color picker.</p>
+                <p>Check back for new features and improvements, and if you would like to contribute to this project, check out the github page at: </p>
+
+                <a href="https://github.com/keithtmccartney/laughing-fortnight">https://github.com/keithtmccartney/laughing-fortnight</a>
+            </div>
+
+            <div class="buttons">
+                <button name="ok">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
